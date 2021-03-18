@@ -2,26 +2,31 @@ public class Job
 {
     private int id;
     private String name;
+    private Recruiter recruiter;
     private int fee;
     private String category;
 
-    public Job(){
+    public Job(int id, String name, Recruiter recruiter, int fee, String category){
+        this.id = id;
+        this.name = name;
+        this.recruiter = recruiter;
+        this.fee = fee;
+        this.category = category;
     }
-    
     public int getId(){
-        return 0;
+        return this.id;
     }    
-    
     public String getName(){
-        return "oop";
+        return this.name;
     }
-    
+    public Recruiter getRecruiter(){
+        return this.recruiter;
+    }
     public int getFee(){
-        return 0;
+        return this.fee;
     }
-    
     public String getCategory(){
-        return "oop";
+        return this.category;
     }
     public void setId(int id){     
     }
@@ -29,6 +34,10 @@ public class Job
     }
     public void setFee(int fee){
     }
+    public void setRecruiter(Recruiter recruiter){
+    }
     public void setCategory(String category){
+    }
+    public void printData(){
     }
 }
