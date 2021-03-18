@@ -7,7 +7,7 @@ public class Jwork{
         Jobseeker jobseeker1 = new Jobseeker(1,"","","","");
         Invoice invoice1 = new Invoice(1,2,"",3,jobseeker1);
         
-        location1.setProvince("Jakarta");
+        location1.setProvince("Jakarta Pusat");
         recruiter1.setName("Dario");
         job1.setFee(100000);
         jobseeker1.setName("Aldo");
