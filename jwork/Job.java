@@ -39,5 +39,6 @@ public class Job
     public void setCategory(String category){
     }
     public void printData(){
+        System.out.println(getName());
     }
 }
