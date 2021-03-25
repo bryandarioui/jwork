@@ -1,11 +1,23 @@
-public class Job
+/**
+ * 
+ * @author(Bryan Dario Lesmana Chikwado)
+ * @version(Modul2-25.03.2021)
+ */
+public class Job /** inisiasi class */
 {
-    private int id;
+    private int id; /** inisiasi variabel */
     private String name;
     private Recruiter recruiter;
     private int fee;
     private String category;
-
+/**
+ * constructor 
+ * @param id id pada job
+ * @param name nama pekerjaan
+ * @param recruiter objek recruiter pada job
+ * @param fee jumlah gaji dari job
+ * @param category kategori dari job 
+ */
     public Job(int id, String name, Recruiter recruiter, int fee, String category){
         this.id = id;
         this.name = name;
@@ -13,31 +25,80 @@ public class Job
         this.fee = fee;
         this.category = category;
     }
+/**
+ * getter id dari job 
+ * @return id dari job 
+ */ 
     public int getId(){
         return this.id;
     }    
+/**
+ * getter nama pekerjaan dari job 
+ * @return nama dari job 
+ */ 
     public String getName(){
         return this.name;
     }
+/**
+ * getter objek recruiter dari job 
+ * @return objek recruiter dari job 
+ */ 
     public Recruiter getRecruiter(){
         return this.recruiter;
     }
+/**
+ * getter jumlah gaji dari job 
+ * @return jumlah gaji dari job 
+ */
     public int getFee(){
         return this.fee;
     }
+/**
+ * getter kategori dari job 
+ * @return kategori dari job 
+ */ 
     public String getCategory(){
         return this.category;
     }
-    public void setId(int id){     
+/**
+ * setter id dari job 
+ * @param id dari job 
+ */
+    public void setId(int id){
+        this.id = id;
     }
+/**
+ * setter nama pekerjaan dari job 
+ * @param nama dari job 
+ */ 
     public void setName(String name){
+        this.name = name;
     }
+/**
+ * setter jumlah gaji dari job 
+ * @param jumlah gaji dari job 
+ */
     public void setFee(int fee){
+        this.fee = fee;
     }
+/**
+ * setter objek recruiter dari job 
+ * @param objek recruiter dari job 
+ */ 
     public void setRecruiter(Recruiter recruiter){
+        this.recruiter = recruiter;
     }
+/**
+ * setter kategori dari job 
+ * @param kategori dari job 
+ */ 
     public void setCategory(String category){
+        this.category = category;
     }
+/**
+ * method untuk print nama dari job
+ * outputnya adalah nama pekerjaan
+ */
     public void printData(){
         System.out.println(getName());
     }
