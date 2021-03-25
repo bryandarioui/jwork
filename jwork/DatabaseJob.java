@@ -7,11 +7,7 @@ public class DatabaseJob /** inisiasi class */
 {
     private String[] listJob; /** inisiasi variabel */
 
-/**
- * constructor 
- */
-    public DatabaseJob(){
-    }
+
 /**
  * fungsi addjob dengan menggunakan boolean
  * @return false
@@ -23,21 +19,21 @@ public class DatabaseJob /** inisiasi class */
  * fungsi removejob dengan menggunakan boolean
  * @return false
  */
-    public boolean removeJob(Job job){
+    public static boolean removeJob(Job job){
        return false;
     }
 /**
  * getter job dari databasejob 
  * @return null 
  */ 
-    public Job getJob(){
+    public static Job getJob(){
        return null; 
     }
 /**
  * getter listjob dari databasejob 
  * @return null 
  */
-    public String[] getListJob(){
+    public static String[] getListJob(){
        return null; 
     } 
 }

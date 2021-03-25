@@ -97,9 +97,14 @@ public class Recruiter /** inisiasi class */
     } 
 /**
  * method untuk print nama dari recruiter
- * outputnya adalah nama perekrut
+ * outputnya adalah id, nama, email, nomor telepon, dan kota perekrut
  */
     public void printData(){
-        System.out.println("Perekrut " + getName());
+     System.out.println("==== Recruiter ====");
+     System.out.println("Id: " + getId());
+     System.out.println("Name: " + getName());
+     System.out.println("Email: " + getEmail());
+     System.out.println("Phone: " + getPhoneNumber());
+     System.out.println("City: " + location.getCity());
     }
 }

@@ -9,7 +9,7 @@ public class Job /** inisiasi class */
     private String name;
     private Recruiter recruiter;
     private int fee;
-    private String category;
+    private JobCategory category;
 /**
  * constructor 
  * @param id id pada job
@@ -18,7 +18,7 @@ public class Job /** inisiasi class */
  * @param fee jumlah gaji dari job
  * @param category kategori dari job 
  */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category){
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category){
         this.id = id;
         this.name = name;
         this.recruiter = recruiter;
@@ -57,7 +57,7 @@ public class Job /** inisiasi class */
  * getter kategori dari job 
  * @return kategori dari job 
  */ 
-    public String getCategory(){
+    public JobCategory getCategory(){
         return this.category;
     }
 /**
@@ -92,14 +92,20 @@ public class Job /** inisiasi class */
  * setter kategori dari job 
  * @param kategori dari job 
  */ 
-    public void setCategory(String category){
+    public void setCategory(JobCategory category){
         this.category = category;
     }
 /**
  * method untuk print nama dari job
- * outputnya adalah nama pekerjaan
+ * outputnya adalah id, nama pekerjaan, nama perekrut, nama kota, jumlah gaji, dan kategori
  */
     public void printData(){
-        System.out.println(getName());
+        System.out.println("==================JOB==================");
+        System.out.println("ID :" + getId());
+        System.out.println("Name :" + getName());
+        System.out.println("Recruiter :" + recruiter.getName());
+        System.out.println("City :" + recruiter.getLocation().getCity());
+        System.out.println("Fee :" + getFee());
+        System.out.println("Category :" + getCategory());
     }
 }

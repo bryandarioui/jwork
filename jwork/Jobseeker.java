@@ -98,9 +98,14 @@ public class Jobseeker /** inisiasi class */
     }  
 /**
  * method untuk print nama dari jobseeker
- * outputnya adalah nama pencari kerja
+ * outputnya adalah id, nama, email, password, tanggal join pencari kerja
  */
     public void printData(){
-        System.out.println("Pencari kerja " + getName());
+     System.out.println("==== Job Seeker ====");
+     System.out.println("Id: " + getId());
+     System.out.println("Name: " + getName());
+     System.out.println("Email: " + getEmail());
+     System.out.println("Password: " + getPassword());
+     System.out.println("Join: " + getJoinDate());
     }
 }

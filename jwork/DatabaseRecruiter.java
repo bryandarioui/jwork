@@ -5,12 +5,8 @@
  */
 public class DatabaseRecruiter /** inisiasi class */
 {
-    private String[] listRecruiter; /** inisiasi variabel */
-/**
- * constructor 
- */
-    public DatabaseRecruiter(){
-    }
+    private static String[] listRecruiter; /** inisiasi variabel */
+
 /**
  * fungsi addrecruiter dengan menggunakan boolean
  * @return false
@@ -22,21 +18,21 @@ public class DatabaseRecruiter /** inisiasi class */
  * fungsi removerecruiter dengan menggunakan boolean
  * @return false
  */
-    public boolean removeRecruiter(Recruiter recruiter){
+    public static boolean removeRecruiter(Recruiter recruiter){
        return false;
     }
 /**
  * getter recruiter dari databaserecruiter
  * @return null 
  */ 
-    public Job getRecruiter(){
+    public static Job getRecruiter(){
        return null; 
     }
 /**
  * getter listrecruiter dari databaserecruiter 
  * @return null 
  */
-    public String[] getListRecruiter(){
+    public static String[] getListRecruiter(){
        return null; 
     } 
 }
