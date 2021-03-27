@@ -10,6 +10,9 @@ public class Invoice /** inisiasi class */
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus invoiceStatus;
+    
 /**
  * constructor 
  * @param id id pada invoice
@@ -18,12 +21,15 @@ public class Invoice /** inisiasi class */
  * @param totalFee jumlah total gaji
  * @param jobseeker objek jobseeker
  */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker){ 
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus invoiceStatus){ 
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.invoiceStatus = invoiceStatus;
+        
     }
 /**
  * getter id dari invoice 
@@ -60,6 +66,13 @@ public class Invoice /** inisiasi class */
     public Jobseeker getjobseeker(){
         return this.jobseeker;
     }
+
+    public PaymentType getPaymentType(){
+        return this.paymentType;
+    }    
+    public InvoiceStatus getInvoiceStatus(){
+        return this.invoiceStatus;
+    }  
 /**
  * setter id dari invoice 
  * @param id dari invoice 
@@ -96,11 +109,24 @@ public class Invoice /** inisiasi class */
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
     }
+    
+    public void setPaymentType(PaymentType paymentType){
+        this.paymentType = paymentType;
+    }    
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
+        this.invoiceStatus = invoiceStatus;
+    }
 /**
  * method untuk print total gaji dari invoice
  * outputnya adalah total gaji
  */
     public void printData(){
-        System.out.println(getTotalFee());
+        System.out.println("================== INVOICE ==================");
+        System.out.println("ID :" + getId());
+        System.out.println("ID Job :" + getIdJob());
+        System.out.println("Date :" + getDate());
+        System.out.println("Seeker :" + jobseeker.getName());
+        System.out.println("Fee :" + getTotalFee());
+        System.out.println("Status :" + getInvoiceStatus());
     }
 }
