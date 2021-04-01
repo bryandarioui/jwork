@@ -3,12 +3,12 @@
  * @author(Bryan Dario Lesmana Chikwado)
  * @version(Modul2-25.03.2021)
  */
-public class Invoice /** inisiasi class */
+public abstract class Invoice /** inisiasi class */
 {
     private int id; /** inisiasi variabel */
-    private int idJob;
+    private Job job;
     private String date;
-    private int totalFee;
+    protected int totalFee;
     private Jobseeker jobseeker;
     private PaymentType paymentType;
     private InvoiceStatus invoiceStatus;
@@ -21,9 +21,9 @@ public class Invoice /** inisiasi class */
  * @param totalFee jumlah total gaji
  * @param jobseeker objek jobseeker
  */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus invoiceStatus){ 
+    public Invoice(int id, Job job, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus invoiceStatus){ 
         this.id = id;
-        this.idJob = idJob;
+        this.job = job;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
@@ -42,8 +42,8 @@ public class Invoice /** inisiasi class */
  * getter id job dari invoice 
  * @return id job dari invoice 
  */
-    public int getIdJob(){
-        return this.idJob;
+    public Job getJob(){
+        return this.job;
     }
 /**
  * getter tanggal dari invoice 
@@ -63,13 +63,11 @@ public class Invoice /** inisiasi class */
  * getter objek jobseeker dari invoice 
  * @return objek jobseeker dari invoice 
  */
-    public Jobseeker getjobseeker(){
+    public Jobseeker getJobseeker(){
         return this.jobseeker;
     }
-
-    public PaymentType getPaymentType(){
-        return this.paymentType;
-    }    
+    public abstract PaymentType getPaymentType();
+    
     public InvoiceStatus getInvoiceStatus(){
         return this.invoiceStatus;
     }  
@@ -85,8 +83,8 @@ public class Invoice /** inisiasi class */
  * @param id job dari invoice 
  */
 
-    public void setIdJob(int idJob){ 
-        this.idJob = idJob;
+    public void setJob(int Job){ 
+        this.job = job;
     }
 /**
  * setter tanggal dari invoice 
@@ -99,9 +97,7 @@ public class Invoice /** inisiasi class */
  * setter jumlah gaji dari invoice 
  * @param jumlah gaji dari invoice 
  */
-    public void setTotalFee(int totalFee){
-        this.totalFee = totalFee;
-    }
+    public abstract void setTotalFee();
 /**
  * setter objek jobseeker dari invoice 
  * @param objek jobseeker dari invoice 
@@ -120,13 +116,14 @@ public class Invoice /** inisiasi class */
  * method untuk print total gaji dari invoice
  * outputnya adalah total gaji
  */
-    public void printData(){
+    public abstract void printData();
+    /*{
         System.out.println("================== INVOICE ==================");
-        System.out.println("ID :" + getId());
-        System.out.println("ID Job :" + getIdJob());
-        System.out.println("Date :" + getDate());
+        System.out.println("ID :" + id);
+        System.out.println("ID Job :" + job);
+        System.out.println("Date :" + date);
         System.out.println("Seeker :" + jobseeker.getName());
-        System.out.println("Fee :" + getTotalFee());
-        System.out.println("Status :" + getInvoiceStatus());
-    }
+        System.out.println("Fee :" + totalFee);
+        System.out.println("Status :" + invoiceStatus);
+    }*/
 }

@@ -1,4 +1,4 @@
-enum JobCategory
+public enum JobCategory
 {
     WebDeveloper("Web Developer"),
     FrontEnd("Front End"), 
@@ -15,7 +15,6 @@ enum JobCategory
         this.text = text;
 }
     
-    @Override
     public String toString(){
         return text;
     }
