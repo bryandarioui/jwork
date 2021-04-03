@@ -4,12 +4,12 @@ public class EwalletPayment extends Invoice
     private Bonus bonus;
 
     public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
-    super(id, job, date, 0, jobseeker, null, invoiceStatus);
+    super(id, job, date, jobseeker, invoiceStatus);
     this.bonus = null;
     }
     
     public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus){
-    super(id, job, date, 0, jobseeker, null, invoiceStatus);
+    super(id, job, date, jobseeker, invoiceStatus);
     this.bonus = bonus;
     }
     
@@ -23,7 +23,7 @@ public class EwalletPayment extends Invoice
         this.bonus = bonus;
     }
     public void setTotalFee(){
-        if(bonus != null && bonus.getActive() == true && getTotalFee() > bonus.getMinTotalFee()){
+        if(bonus != null && bonus.getActive() == true && getJob().getFee() > bonus.getMinTotalFee()){
            super.totalFee = super.getJob().getFee() + bonus.getExtraFee();
     }else{
         super.totalFee = super.getJob().getFee();

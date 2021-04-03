@@ -21,13 +21,12 @@ public abstract class Invoice /** inisiasi class */
  * @param totalFee jumlah total gaji
  * @param jobseeker objek jobseeker
  */
-    public Invoice(int id, Job job, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus invoiceStatus){ 
+    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){ 
         this.id = id;
         this.job = job;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.paymentType = paymentType;
         this.invoiceStatus = invoiceStatus;
         
     }
