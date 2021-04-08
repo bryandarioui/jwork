@@ -60,11 +60,18 @@ public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean
         this.active = active;
     }
 
-    public void printData(){
-        System.out.println(id);
-        System.out.println(referralCode);
-        System.out.println(extraFee);
-        System.out.println(minTotalFee);
-        System.out.println(active);
+public String toString(){
+    return "Id = " + id +
+            "\nReferral Code = " + referralCode +
+            "\nExtraa Fee = " + extraFee +
+            "\nMin Total Fee = " + minTotalFee +
+            "\nActive Status = " + active ;
+        }
+        
+    //public void printData(){
+      //  System.out.println(id);
+      //  System.out.println(referralCode);
+      //  System.out.println(extraFee);
+      //  System.out.println(minTotalFee);
+      //  System.out.println(active);
     }
-}

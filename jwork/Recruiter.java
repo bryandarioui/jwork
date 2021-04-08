@@ -95,16 +95,25 @@ public class Recruiter /** inisiasi class */
     public void setLocation(Location location){
         this.location = location;
     } 
+    
+    
+public String toString(){
+    return "Id = " + id +
+            "\nName = " + name +
+            "\nEmail = " + email +
+            "\nPhone = " + phoneNumber +
+            "\nCity = " + location.getCity() ;
+        }
 /**
  * method untuk print nama dari recruiter
  * outputnya adalah id, nama, email, nomor telepon, dan kota perekrut
  */
-    public void printData(){
-     System.out.println("==== Recruiter ====");
-     System.out.println("Id: " + getId());
-     System.out.println("Name: " + getName());
-     System.out.println("Email: " + getEmail());
-     System.out.println("Phone: " + getPhoneNumber());
-     System.out.println("City: " + location.getCity());
+    //public void printData(){
+    // System.out.println("==== Recruiter ====");
+    // System.out.println("Id: " + getId());
+    // System.out.println("Name: " + getName());
+    // System.out.println("Email: " + getEmail());
+    // System.out.println("Phone: " + getPhoneNumber());
+    // System.out.println("City: " + location.getCity());
     }
-}
+

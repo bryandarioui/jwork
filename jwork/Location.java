@@ -62,14 +62,19 @@ public class Location /** inisiasi class */
     public void setDescription(String description){
         this.description = description;
     } 
+    
+public String toString(){
+    return "Province = " + province +
+            "\nCity = " + city +
+            "\nDescription = " + description;
+        }    
 /**
  * method untuk print provinsi dari location
  * outputnya adalah nama provinsi
  */
-    public void printData(){
-     System.out.println("==== Location ====");
-     System.out.println("Province: " + getProvince());
-     System.out.println("City: " + getCity());
-     System.out.println("Description: " + getDescription());
+    //public void printData(){
+     //System.out.println("==== Location ====");
+     //System.out.println("Province: " + getProvince());
+     //System.out.println("City: " + getCity());
+     //System.out.println("Description: " + getDescription());
     }
-}

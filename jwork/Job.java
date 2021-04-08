@@ -99,13 +99,21 @@ public class Job /** inisiasi class */
  * method untuk print nama dari job
  * outputnya adalah id, nama pekerjaan, nama perekrut, nama kota, jumlah gaji, dan kategori
  */
-    public void printData(){
-        System.out.println("==================JOB==================");
-        System.out.println("ID :" + id);
-        System.out.println("Name :" + name);
-        System.out.println("Recruiter :" + recruiter.getName());
-        System.out.println("City :" + recruiter.getLocation().getCity());
-        System.out.println("Fee :" + fee);
-        System.out.println("Category :" + category);
+    public String toString(){
+    return "Id = " + id +
+            "\nName = " + name +
+            "\nRecruiter = " + recruiter.getName() +
+            "\nCity = " + recruiter.getLocation().getCity() +
+            "\nFee = " + fee +
+            "\nCategory = " + category;
     }
-}
+    
+    //public void printData(){
+     //   System.out.println("==================JOB==================");
+     //   System.out.println("ID :" + id);
+     //   System.out.println("Name :" + name);
+     //   System.out.println("Recruiter :" + recruiter.getName());
+     //   System.out.println("City :" + recruiter.getLocation().getCity());
+     //   System.out.println("Fee :" + fee);
+     //   System.out.println("Category :" + category);
+    }
