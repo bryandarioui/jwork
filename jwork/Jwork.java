@@ -26,6 +26,11 @@ public class Jwork{ /** inisiasi class */
         System.out.println(jobseeker2.toString());
         jobseeker3.toString();
         System.out.println(jobseeker3.toString());
+        
+        jobseeker1.setEmail("erickrichardo@gmail.com");
+        jobseeker1.setPassword("AsdAsd123");
+        jobseeker1.toString();
+        System.out.println(jobseeker1.toString());        
         //BankPayment bankpayment1 = new BankPayment(1, job1, "20 Maret 2020", jobseeker1, InvoiceStatus.Finished);
         //BankPayment bankpayment2 = new BankPayment(2, job1, "20 Maret 2020", jobseeker1, InvoiceStatus.Finished, 100000);
         

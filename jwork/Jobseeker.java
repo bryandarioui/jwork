@@ -31,7 +31,6 @@ public class Jobseeker /** inisiasi class */
         this.setEmail(email);
         this.setPassword(password);
         this.joinDate = joinDate;
-
     }
     public Jobseeker(int id,String name, String email, String password,int year, int month, int dayOfMonth){
         this.id = id;
@@ -43,11 +42,8 @@ public class Jobseeker /** inisiasi class */
     public Jobseeker(int id,String name, String email, String password){
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
-        this.joinDate = joinDate;
-        setEmail(email);
-        setPassword(password);
+        this.setEmail(email);
+        this.setPassword(password);        
     }
 /**
  * getter id dari jobseeker 
@@ -115,7 +111,7 @@ public void setEmail(String email) {
  * setter password dari jobseeker
  * @param password dari jobseeker 
  */
-    public void setPassword(String Password){
+    public void setPassword(String password){
         Pattern pt = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$");
         Matcher mt = pt.matcher(password);
         if (mt.matches()){
@@ -123,7 +119,6 @@ public void setEmail(String email) {
         return;
         }
         this.password = "";
-        
     }
 /**
  * setter tanggal join dari jobseeker  
