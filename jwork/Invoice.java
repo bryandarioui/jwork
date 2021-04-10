@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  * 
  * @author(Bryan Dario Lesmana Chikwado)
@@ -7,7 +10,7 @@ public abstract class Invoice /** inisiasi class */
 {
     private int id; /** inisiasi variabel */
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private PaymentType paymentType;
@@ -21,10 +24,9 @@ public abstract class Invoice /** inisiasi class */
  * @param totalFee jumlah total gaji
  * @param jobseeker objek jobseeker
  */
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){ 
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){ 
         this.id = id;
         this.job = job;
-        this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
@@ -48,7 +50,7 @@ public abstract class Invoice /** inisiasi class */
  * getter tanggal dari invoice 
  * @return tanggal dari invoice 
  */
-    public String getDate(){
+    public Calendar getDate(){
         return this.date;
     }
 /**
@@ -89,8 +91,11 @@ public abstract class Invoice /** inisiasi class */
  * setter tanggal dari invoice 
  * @param tanggal dari invoice 
  */
-    public void setDate(String date){
+    public void setDate(Calendar Date){
         this.date = date;
+    }
+    public void setDate(int year,int month,int dayOfMonth ){
+         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
 /**
  * setter jumlah gaji dari invoice 
@@ -111,11 +116,9 @@ public abstract class Invoice /** inisiasi class */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus;
     }
-/**
- * method untuk print total gaji dari invoice
- * outputnya adalah total gaji
- */
-    public abstract void printData();
+
+    public abstract String toString();
+    //public abstract void printData();
     /*{
         System.out.println("================== INVOICE ==================");
         System.out.println("ID :" + id);

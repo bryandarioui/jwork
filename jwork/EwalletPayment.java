@@ -3,12 +3,12 @@ public class EwalletPayment extends Invoice
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
 
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
-    super(id, job, date, jobseeker, invoiceStatus);
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    super(id, job, jobseeker, invoiceStatus);
     }
     
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus){
-    super(id, job, date, jobseeker, invoiceStatus);
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus){
+    super(id, job, jobseeker, invoiceStatus);
     this.bonus = bonus;
     }
     
@@ -28,9 +28,32 @@ public class EwalletPayment extends Invoice
         super.totalFee = getJob().getFee();
     }
     }
-
+    
     @Override
-    public void printData()
+    public String toString()
+    {
+        if (getJob().getFee() != totalFee) {
+                return "\n==========Invoice==========" +
+                "\nID: "+ super.getId() +
+                "\nJob: "+ super.getJob().getName() +
+                "\nDate: "+ super.getDate() +
+                "\nJob Seeker: "+ super.getJobseeker().getName() +
+                "\nTotal Fee: "+ super.totalFee +
+                "\nBonus: " + bonus.getReferralCode() +
+                "\nStatus:  "+ super.getInvoiceStatus().toString() +
+                "\nPayment Type: "+ PAYMENT_TYPE.toString();
+        }else{
+        return "\n==========Invoice==========" +
+                "\nID: "+ super.getId() +
+                "\nJob: "+ super.getJob().getName() +
+                "\nDate: "+ super.getDate() +
+                "\nJob Seeker: "+ super.getJobseeker().getName() +
+                "\nTotal Fee: "+ super.totalFee +
+                "\nStatus:  "+ super.getInvoiceStatus().toString() +
+                "\nPayment Type: "+ PAYMENT_TYPE.toString();
+    }
+    
+    /*public void printData()
     {
         System.out.println("==========Invoice==========");
         System.out.println("ID: "+ super.getId());
@@ -45,5 +68,6 @@ public class EwalletPayment extends Invoice
 
         System.out.println("Status:  "+ super.getInvoiceStatus().toString());
         System.out.println("Payment Type: "+ PAYMENT_TYPE.toString());
-    }
+    */
+}
 }

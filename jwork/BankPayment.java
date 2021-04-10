@@ -3,12 +3,12 @@ public class BankPayment extends Invoice
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee = 0;
 
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
-    super(id, job, date, jobseeker, invoiceStatus);
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    super(id, job, jobseeker, invoiceStatus);
     }
     
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
-    super(id, job, date, jobseeker, invoiceStatus);
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
+    super(id, job, jobseeker, invoiceStatus);
     this.adminFee = adminFee;
     }
     
@@ -30,7 +30,19 @@ public class BankPayment extends Invoice
     }
  
     @Override
-    public void printData()
+    public String toString(){
+        return "\n==========Invoice==========" +
+                "\nID: "+ super.getId() +
+                "\nJob: "+ super.getJob().getName() +
+                "\nDate: "+ super.getDate() +
+                "\nJob Seeker: "+ super.getJobseeker().getName() +
+                "\nAdminFee "+ adminFee +
+                "\nTotal Fee: "+ super.totalFee +
+                "\nStatus:  "+ super.getInvoiceStatus().toString() +
+                "\nPayment Type: "+ PAYMENT_TYPE.toString();
+    }
+    }
+    /*public void printData()
     {
         System.out.println("==========Invoice==========");
         System.out.println("ID: "+ super.getId());
@@ -41,5 +53,5 @@ public class BankPayment extends Invoice
         System.out.println("Total Fee: "+ super.totalFee);
         System.out.println("Status:  "+ super.getInvoiceStatus().toString());
         System.out.println("Payment Type: "+ PAYMENT_TYPE.toString());
-    }
-}
+    }*/
+
