@@ -1,26 +1,74 @@
-/**
- * 
- * @author(Bryan Dario Lesmana Chikwado)
- * @version
- */
-public class DatabaseBonus /** inisiasi class */
-{
-    private static String[] listBonus; /** inisiasi variabel */
+import java.util.ArrayList;
 
+public class DatabaseBonus
+{
+    private static ArrayList<Bonus> BONUS_DATABASE;
+    private static int lastId = 0;
+
+    public static ArrayList<Bonus> getBonusDatabase(){
+        return BONUS_DATABASE;
+    }
+
+    public static int getLastId(){
+        return lastId;
+    }
+
+    public static Bonus getBonusById(int id){
+        for (int i=0; i < BONUS_DATABASE.size(); i++) {
+            if(BONUS_DATABASE.get(i).getId() == id){
+                return BONUS_DATABASE.get(i);
+            }
+        }
+        return null;
+    }
+
+    public static Bonus getBonusByReferralCode(String referralCode){
+        for (int i=0; i < BONUS_DATABASE.size(); i++) {
+            if(BONUS_DATABASE.get(i).getReferralCode()== referralCode){
+                return BONUS_DATABASE.get(i);
+            }
+        }
+        return null;
+    }
 
     public static boolean addBonus(Bonus bonus){
+        for (Bonus bons : BONUS_DATABASE)
+        {
+            if (bons.getId() == bonus.getId()) return false;
+            if (bons.getReferralCode() == bonus.getReferralCode()) return false;
+        }
+        BONUS_DATABASE.add(bonus);
+        lastId = bonus.getId();
+        return true;
+    }
+
+    public static boolean activateBonus(int id) {
+        for (int i = 0; i < BONUS_DATABASE.size(); i++) {
+            if (BONUS_DATABASE.get(i).getId() == id) {
+                BONUS_DATABASE.get(i).setActive(true);
+                return true;
+            }
+        }
         return false;
     }
 
-    public static boolean removeBonus(Bonus bonus){
-       return false;
+    public static boolean deactivateBonus(int id) {
+        for (int i = 0; i < BONUS_DATABASE.size(); i++) {
+            if (BONUS_DATABASE.get(i).getId() == id) {
+                BONUS_DATABASE.get(i).setActive(true);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static Bonus getBonus(){
-       return null; 
+    public static boolean removeBonus(int id){
+        for (int i = 0; i < BONUS_DATABASE.size(); i++) {
+            if (BONUS_DATABASE.get(i).getId() == id) {
+                BONUS_DATABASE.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
-
-    public static String[] getListBonus(){
-       return null; 
-    } 
 }

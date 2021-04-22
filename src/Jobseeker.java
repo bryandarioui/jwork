@@ -31,6 +31,8 @@ public class Jobseeker /** inisiasi class */
         this.setEmail(email);
         this.setPassword(password);
         this.joinDate = joinDate;
+        setEmail(email);
+        setPassword(password);
     }
     public Jobseeker(int id,String name, String email, String password,int year, int month, int dayOfMonth){
         this.id = id;
@@ -89,7 +91,6 @@ public class Jobseeker /** inisiasi class */
     }
 /**
  * setter nama pencari pekerjaan dari jobseeker
- * @param nama pencari pekerjaan dari jobseeker 
  */
     public void setName(String name){ 
         this.name = name;
@@ -99,7 +100,7 @@ public class Jobseeker /** inisiasi class */
  * @param email pencari kerja pada jobseeker
  */
 public void setEmail(String email) {
-        Pattern pt = Pattern.compile("^(?!.*([.])\\1)[^.-][a-zA-Z0-9.&*_~]+@[^-. ][a-zA-Z0-9-.&*_~]+(?:\\.[a-zA-Z0-9-]+)*");
+        Pattern pt = Pattern.compile("^(?!.*([.])\1)[^-.@][a-zA-Z0-9.&*_~]+(?!.*([@.])\1)[^-.][a-zA-Z0-9-.&*_~]+(?:\\.[a-zA-Z0-9-]+)*$");
         Matcher mt = pt.matcher(email);
         if (mt.matches()) {
             this.email = email;
@@ -121,8 +122,7 @@ public void setEmail(String email) {
         this.password = "";
     }
 /**
- * setter tanggal join dari jobseeker  
- * @param tanggal join dari jobseeker 
+ * setter tanggal join dari jobseeker
  */
     public void setJoinDate(Calendar JoinDate){
         this.joinDate = joinDate;
@@ -133,7 +133,7 @@ public void setEmail(String email) {
 
     public String toString(){
     String joindate = "";
-    String pattern = "dd-MM-yyyy";
+    String pattern = "dd MMMM yyyy";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     if(joinDate != null){
         Date date = joinDate.getTime();

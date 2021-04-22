@@ -69,28 +69,28 @@ public class Job /** inisiasi class */
     }
 /**
  * setter nama pekerjaan dari job 
- * @param nama dari job 
+ * @param
  */ 
     public void setName(String name){
         this.name = name;
     }
 /**
  * setter jumlah gaji dari job 
- * @param jumlah gaji dari job 
+ * @param
  */
     public void setFee(int fee){
         this.fee = fee;
     }
 /**
  * setter objek recruiter dari job 
- * @param objek recruiter dari job 
+ * @param
  */ 
     public void setRecruiter(Recruiter recruiter){
         this.recruiter = recruiter;
     }
 /**
  * setter kategori dari job 
- * @param kategori dari job 
+ * @param
  */ 
     public void setCategory(JobCategory category){
         this.category = category;

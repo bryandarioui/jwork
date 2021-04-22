@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author(Bryan Dario Lesmana Chikwado)
@@ -5,34 +7,39 @@
  */
 public class DatabaseRecruiter /** inisiasi class */
 {
-    private static String[] listRecruiter; /** inisiasi variabel */
+    private static ArrayList<Recruiter> RECRUITER_DATABASE;
+    private static int lastId = 0;
 
-/**
- * fungsi addrecruiter dengan menggunakan boolean
- * @return false
- */
+    public static ArrayList<Recruiter> getRecruiterDatabase(){
+            return RECRUITER_DATABASE;
+        }
+
+    public static int getLastId(){
+        return getLastId();
+    }
+
+    public static Recruiter getRecruiterById(int id){
+        for (int i = 0; i < RECRUITER_DATABASE.size(); i++) {
+            if (RECRUITER_DATABASE.get(i).getId() == id) {
+                return RECRUITER_DATABASE.get(i);
+            }
+        }
+        return null;
+    }
+
     public static boolean addRecruiter(Recruiter recruiter){
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = RECRUITER_DATABASE.size()-1;
+        return true;
+    }
+
+    public static boolean removeRecruiter(int id){
+        for (int i = 0; i < RECRUITER_DATABASE.size(); i++) {
+            if (RECRUITER_DATABASE.get(i).getId() == id) {
+                RECRUITER_DATABASE.remove(i);
+                return true;
+            }
+        }
         return false;
     }
-/**
- * fungsi removerecruiter dengan menggunakan boolean
- * @return false
- */
-    public static boolean removeRecruiter(Recruiter recruiter){
-       return false;
-    }
-/**
- * getter recruiter dari databaserecruiter
- * @return null 
- */ 
-    public static Job getRecruiter(){
-       return null; 
-    }
-/**
- * getter listrecruiter dari databaserecruiter 
- * @return null 
- */
-    public static String[] getListRecruiter(){
-       return null; 
-    } 
 }

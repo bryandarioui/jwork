@@ -62,35 +62,35 @@ public class Recruiter /** inisiasi class */
     }
 /**
  * setter id dari recruiter 
- * @param id dari recruiter 
+ * @param
  */
     public void setId(int id){ 
         this.id = id;
     }
 /**
  * setter nama perekrut dari recruiter 
- * @param nama dari recruiter 
+ * @param
  */ 
     public void setName(String name){ 
         this.name = name;
     }
 /**
  * setter email perekrut dari recruiter 
- * @param email dari recruiter 
+ * @param
  */
     public void setEmail(String Email){
         this.email = email;
     }
 /**
  * setter nomor telepon dari recruiter 
- * @param nomor telepon dari recruiter  
+ * @param
  */
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 /**
  * setter objek location dari recruiter
- * @param objek location dari recruiter 
+ * @param
  */
     public void setLocation(Location location){
         this.location = location;

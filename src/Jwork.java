@@ -5,6 +5,7 @@
  */
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.ArrayList;
 
 public class Jwork{ /** inisiasi class */
     
@@ -13,10 +14,22 @@ public class Jwork{ /** inisiasi class */
          * membuat objek dari class location, recruiter, job, jobseeker, dan invoice
          */
         Location location1 = new Location("DKI Jakarta","Jakarta Pusat","Tempat lahir");
-        Recruiter recruiter1 = new Recruiter(1,"Bryan","bryandariolc@gmail.com","081398558008",location1);
-        Job job1 = new Job(1,"Senior Designer",recruiter1,200000,JobCategory.DataAnalyst); 
+        DatabaseRecruiter.addRecruiter( new Recruiter(1,"Bryan","bryan@gmail.com","081398558008",location1));
+
+        DatabaseJobseeker.addJobseeker( new Jobseeker(1,"Dario","bryandariolc@gmail.com","asdas"));
+        DatabaseJobseeker.addJobseeker( new Jobseeker(2,"Dario","bryandariolc@gmail.com","asdas"));
+        DatabaseJobseeker.addJobseeker( new Jobseeker(3,"Ferlinda","ferlinda@gmail.com","asdas"));
+
+        DatabaseJob.addJob( new Job(1,"Senior Designer",DatabaseRecruiter.getRecruiterById(1),200000,JobCategory.DataAnalyst));
+        DatabaseJob.addJob( new Job(2,"Senior Designer",DatabaseRecruiter.getRecruiterById(2),200000,JobCategory.DataAnalyst));
+        DatabaseJob.addJob( new Job(3,"Senior Designer",DatabaseRecruiter.getRecruiterById(3),200000,JobCategory.WebDeveloper));
+
+        DatabaseJobseeker.getJobseekerDatabase();
+
+        //Recruiter recruiter1 = new Recruiter(1,"Bryan","bryandariolc@gmail.com","081398558008",location1);
+        //Job job1 = new Job(1,"Senior Designer",recruiter1,200000,JobCategory.DataAnalyst);
         
-        Jobseeker jobseeker1 = new Jobseeker(1,"Apeng","erickrichardo..@gmail.com","asdas",new GregorianCalendar(2021, 3, 12));
+        //Jobseeker jobseeker1 = new Jobseeker(1,"Apeng","bryandariolc@gmail.com","asdas",new GregorianCalendar(2021, 3, 12));
         /*Jobseeker jobseeker2 = new Jobseeker(2,"Ando","ando@gmail.com","Asdasd123",2021, 12, 12);
         Jobseeker jobseeker3 = new Jobseeker(3,"Wilson","wilson@gmail.com","password123");
         
@@ -35,8 +48,6 @@ public class Jwork{ /** inisiasi class */
         
         Calendar calendar1 = new GregorianCalendar();
         
-        
-        
         BankPayment bankpayment1 = new BankPayment(1, job1, jobseeker1, InvoiceStatus.Finished);
         bankpayment1.setDate(calendar1);
         //BankPayment bankpayment2 = new BankPayment(2, job1, jobseeker1, InvoiceStatus.Finished, 100000);
@@ -54,8 +65,6 @@ public class Jwork{ /** inisiasi class */
         //bankpayment2.printData();        
 
 
-        
-        
         //ewalletpayment1.setTotalFee();
         //ewalletpayment2.setTotalFee();
         //ewalletpayment3.setTotalFee(); 

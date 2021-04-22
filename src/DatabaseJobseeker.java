@@ -1,43 +1,40 @@
-/**
- * 
- * @author(Bryan Dario Lesmana Chikwado)
- * @version(Modul2-25.03.2021)
- */
-public class DatabaseJobseeker /** inisiasi class */
+import java.util.ArrayList;
+
+public class DatabaseJobseeker
 {
-    private String[] listJob; /** inisiasi variabel */
-     
-/**
- * constructor
- */
-    public DatabaseJobseeker(){
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE;
+    private static int lastId = 0;
+
+    public static ArrayList<Jobseeker> getJobseekerDatabase(){
+        return JOBSEEKER_DATABASE;
     }
-/**
- * fungsi addjobseeker dengan menggunakan boolean
- * @return false
- */
+
+    public static int getLastId(){
+        return lastId;
+    }
+
+    public static Jobseeker getJobseekerById(int id){
+        for (int i=0; i < JOBSEEKER_DATABASE.size(); i++) {
+            if(JOBSEEKER_DATABASE.get(i).getId() == id){
+                return JOBSEEKER_DATABASE.get(i);
+            }
+        }
+        return null;
+    }
+
     public static boolean addJobseeker(Jobseeker jobseeker){
+        JOBSEEKER_DATABASE.add(jobseeker);
+        lastId = jobseeker.getId();
+        return true;
+    }
+
+    public static boolean removeJobseeker(int id){
+        for (int i=0; i < JOBSEEKER_DATABASE.size(); i++) {
+            if(JOBSEEKER_DATABASE.get(i).getId() == id) {
+                JOBSEEKER_DATABASE.remove(i);
+                return true;
+            }
+        }
         return false;
     }
-/**
- * fungsi removejobseeker dengan menggunakan boolean
- * @return false
- */
-    public static boolean removeJobseeker(Jobseeker jobseeker){
-       return false;
-    }
-/**
- * getter jobseeker
- * @return null
- */
-    public static Jobseeker getJobseeker(){
-       return null; 
-    }
-/**
- * getter listjobseeker dari databasejobseeker
- * @return null
- */
-    public static String[] getListJobseeker(){
-       return null; 
-    } 
 }

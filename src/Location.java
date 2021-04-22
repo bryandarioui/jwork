@@ -43,21 +43,21 @@ public class Location /** inisiasi class */
     }  
 /**
  * setter provinsi dari location 
- * @param provinsi dari location 
+ * @param
  */ 
     public void setProvince(String province){
         this.province = province;
     }
 /**
  * setter nama kota dari location 
- * @param nama kota dari location 
+ * @param
  */ 
     public void setCity(String city){
         this.city = city;
     }
 /**
  * setter deskripsi dari location 
- * @param deskripsi dari location 
+ * @param
  */ 
     public void setDescription(String description){
         this.description = description;
