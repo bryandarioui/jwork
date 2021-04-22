@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DatabaseJobseeker
 {
-    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE;
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();;
     private static int lastId = 0;
 
     public static ArrayList<Jobseeker> getJobseekerDatabase(){

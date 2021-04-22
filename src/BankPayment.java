@@ -54,6 +54,7 @@ public class BankPayment extends Invoice {
                 "\nPayment Type : " + PAYMENT_TYPE.toString();
         return str;
     }
+}
     /*public void printData()
     {
         System.out.println("==========Invoice==========");

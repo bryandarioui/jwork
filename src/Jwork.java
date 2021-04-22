@@ -24,8 +24,23 @@ public class Jwork{ /** inisiasi class */
         DatabaseJob.addJob( new Job(2,"Senior Designer",DatabaseRecruiter.getRecruiterById(2),200000,JobCategory.DataAnalyst));
         DatabaseJob.addJob( new Job(3,"Senior Designer",DatabaseRecruiter.getRecruiterById(3),200000,JobCategory.WebDeveloper));
 
-        DatabaseJobseeker.getJobseekerDatabase();
+        {
+            ArrayList<Jobseeker> jstest = DatabaseJobseeker.getJobseekerDatabase();
+            for (Jobseeker js : jstest)
+                System.out.println(js.toString());
+        }
 
+        Job job1 = new Job(1, "Duelist", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
+        Job job2 = new Job(2, "Controller", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd);
+        Job job3 = new Job(3, "tes3", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
+        DatabaseJob.addJob(job1);
+        DatabaseJob.addJob(job2);
+        DatabaseJob.addJob(job3);
+
+        ArrayList<Job> jobtest = DatabaseJob.getJobByCategory(JobCategory.UI);
+        for (Job j: jobtest)
+            System.out.println(j.toString());
+    }
         //Recruiter recruiter1 = new Recruiter(1,"Bryan","bryandariolc@gmail.com","081398558008",location1);
         //Job job1 = new Job(1,"Senior Designer",recruiter1,200000,JobCategory.DataAnalyst);
         
@@ -46,22 +61,22 @@ public class Jwork{ /** inisiasi class */
         System.out.println(jobseeker1.toString());        
         */
         
-        Calendar calendar1 = new GregorianCalendar();
+        //Calendar calendar1 = new GregorianCalendar();
         
-        BankPayment bankpayment1 = new BankPayment(1, job1, jobseeker1, InvoiceStatus.Finished);
-        bankpayment1.setDate(calendar1);
+       // BankPayment bankpayment1 = new BankPayment(1, job1, jobseeker1, InvoiceStatus.Finished);
+        //bankpayment1.setDate(calendar1);
         //BankPayment bankpayment2 = new BankPayment(2, job1, jobseeker1, InvoiceStatus.Finished, 100000);
-        Bonus bonus1 = new Bonus(1, null, 50000, 25000, true);
+        //Bonus bonus1 = new Bonus(1, null, 50000, 25000, true);
         //Bonus bonus2 = new Bonus(2, "test", 10000, 30000, true);
         //Bonus bonus3 = new Bonus(3, "test", 60000, 30000, true);
-        EwalletPayment ewalletpayment1 = new EwalletPayment(1, job1, jobseeker1, InvoiceStatus.Ongoing,bonus1);
-        ewalletpayment1.setDate(calendar1);//EwalletPayment ewalletpayment2 = new EwalletPayment(2, job1, jobseeker1, InvoiceStatus.Ongoing,bonus2);
+        //EwalletPayment ewalletpayment1 = new EwalletPayment(1, job1, jobseeker1, InvoiceStatus.Ongoing,bonus1);
+        //ewalletpayment1.setDate(calendar1);//EwalletPayment ewalletpayment2 = new EwalletPayment(2, job1, jobseeker1, InvoiceStatus.Ongoing,bonus2);
         //EwalletPayment ewalletpayment3 = new EwalletPayment(3, job1, jobseeker1, InvoiceStatus.Ongoing,bonus3);
         //bankpayment1.setTotalFee();
         //bankpayment2.setTotalFee();
         
-        bankpayment1.toString();
-        System.out.println(bankpayment1.toString());
+       // bankpayment1.toString();
+        //System.out.println(bankpayment1.toString());
         //bankpayment2.printData();        
 
 
@@ -69,8 +84,8 @@ public class Jwork{ /** inisiasi class */
         //ewalletpayment2.setTotalFee();
         //ewalletpayment3.setTotalFee(); 
         
-        ewalletpayment1.toString();
-        System.out.println(ewalletpayment1.toString());
+        //ewalletpayment1.toString();
+        //System.out.println(ewalletpayment1.toString());
         //ewalletpayment2.printData();
         //ewalletpayment3.printData();
         //Invoice invoice1 = new Invoice(1,job1.getId(),"1/20/2021",job1.getFee(),jobseeker1,PaymentType.BankPayment,InvoiceStatus.Ongoing);
@@ -89,4 +104,4 @@ public class Jwork{ /** inisiasi class */
         //DatabaseJob.addJob(job1); /** memasukkan objek kelas job dan recruiter tanpa membuat databasenya*/
         //DatabaseRecruiter.addRecruiter(recruiter1);
     }   
-}
+

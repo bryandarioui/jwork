@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class DatabaseRecruiter /** inisiasi class */
 {
-    private static ArrayList<Recruiter> RECRUITER_DATABASE;
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();;
     private static int lastId = 0;
 
     public static ArrayList<Recruiter> getRecruiterDatabase(){

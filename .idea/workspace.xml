@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1e40815-90c4-4dd8-8212-de652089bbec" name="Default Changelist" comment="Modul 6 - Pre CS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a1e40815-90c4-4dd8-8212-de652089bbec" name="Default Changelist" comment="Modul 6 - Case Study">
       <change beforePath="$PROJECT_DIR$/src/BankPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EwalletPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EwalletPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Jobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jobseeker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Jwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recruiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +55,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619060425268</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modul 6 - Case Study">
+      <created>1619087381495</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619087381495</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modul 6 - Case Study">
+      <created>1619087389214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619087389214</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +86,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modul 6 - Pre CS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 - Pre CS" />
+    <MESSAGE value="Modul 6 - Case Study" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 - Case Study" />
   </component>
 </project>

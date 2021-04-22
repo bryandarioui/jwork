@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class DatabaseJob /** inisiasi class */
 {
-    private static ArrayList<Job> JOB_DATABASE;
+    private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();;
     private static int lastId = 0;
 
     public static ArrayList<Job> getJobDatabase(){

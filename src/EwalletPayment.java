@@ -9,7 +9,7 @@ public class EwalletPayment extends Invoice
     private Bonus bonus;
     
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
-    super(id, jobs, jobseeker;
+    super(id, jobs, jobseeker);
     }
     
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
@@ -35,7 +35,7 @@ public class EwalletPayment extends Invoice
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         Date date = getDate().getTime();
         String strDate = "";
         if (date != null) {
@@ -43,7 +43,7 @@ public class EwalletPayment extends Invoice
             strDate = dateFormat.format(date);
         }
         // Print data secara keseluruhan
-        String str =    "====== Ewallet Payment ======" +
+        String str = "====== Ewallet Payment ======" +
                 "\nID           : " + getId() +
                 "\nJobs         : " + getJobs() +
                 "\nDate         : " + strDate +
@@ -54,11 +54,12 @@ public class EwalletPayment extends Invoice
                 getTotalFee() > bonus.getMinTotalFee()) {
             str += "\nReferral Code: " + bonus.getReferralCode();
         }
-            str +=  "\nFee          : " + totalFee +
-                    "\nStatus       : " + getInvoiceStatus().toString() +
-                    "\nPayment Type : " + PAYMENT_TYPE.toString();
+        str += "\nFee          : " + totalFee +
+                "\nStatus       : " + getInvoiceStatus().toString() +
+                "\nPayment Type : " + PAYMENT_TYPE.toString();
         return str;
-
+    }
+}
 
     /*public void printData()
     {
@@ -76,5 +77,3 @@ public class EwalletPayment extends Invoice
         System.out.println("Status:  "+ super.getInvoiceStatus().toString());
         System.out.println("Payment Type: "+ PAYMENT_TYPE.toString());
     */
-}
-}
