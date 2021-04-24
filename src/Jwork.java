@@ -3,16 +3,15 @@
  * @author(Bryan Dario Lesmana Chikwado)
  * @version(Modul2-25.03.2021)
  */
+import java.lang.reflect.Array;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.ArrayList;
 
 public class Jwork{ /** inisiasi class */
     
-    public static void main (String[] args){ /** main method */
-        /** 
-         * membuat objek dari class location, recruiter, job, jobseeker, dan invoice
-         */
+    public static void main (String[] args){
+
         Location location1 = new Location("DKI Jakarta","Jakarta Pusat","Tempat lahir");
         DatabaseRecruiter.addRecruiter( new Recruiter(1,"Bryan","bryan@gmail.com","081398558008",location1));
 
@@ -30,17 +29,61 @@ public class Jwork{ /** inisiasi class */
                 System.out.println(js.toString());
         }
 
-        Job job1 = new Job(1, "Duelist", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
-        Job job2 = new Job(2, "Controller", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd);
-        Job job3 = new Job(3, "tes3", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
-        DatabaseJob.addJob(job1);
-        DatabaseJob.addJob(job2);
-        DatabaseJob.addJob(job3);
+        //Job job1 = new Job(1, "Duelist", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
+        //Job job2 = new Job(2, "Controller", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd);
+        //Job job3 = new Job(3, "tes3", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI);
+        //DatabaseJob.addJob(job1);
+        //DatabaseJob.addJob(job2);
+        //DatabaseJob.addJob(job3);
 
         ArrayList<Job> jobtest = DatabaseJob.getJobByCategory(JobCategory.UI);
         for (Job j: jobtest)
             System.out.println(j.toString());
     }
+
+    {
+        DatabaseBonus.addBonus(new Bonus(1, "asd", 1500, 1000, false));
+        DatabaseBonus.addBonus(new Bonus(2, "asd", 1500, 1000, false));
+
+    }
+
+    {
+        ArrayList<Bonus> list = DatabaseBonus.getBonusDatabase();
+        for(Bonus b : list){
+            System.out.println(b.toString());
+        }
+    }
+
+    {
+        ArrayList<Job> list = new ArrayList<Job>();
+        ArrayList<Job> list2 = new ArrayList<Job>();
+        list.add(new Job(1, "Duelist", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UI));
+        list.add(new Job(2, "Controller", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd));
+
+        DatabaseInvoice.addInvoice(new EwalletPayment(1, list, DatabaseJobseeker.getJobseekerById(1),DatabaseBonus.getBonusById(1)));
+        DatabaseInvoice.addInvoice(new BankPayment(2, list2, DatabaseJobseeker.getJobseekerById(1),DatabaseBonus.getBonusById(1)));
+    }
+
+    {
+         }
+
+    {
+        ArrayList<Invoice> list = DatabaseInvoice.getInvoiceDatabase();
+        for(Invoice i : list)
+            i.setTotalFee();
+    }
+
+    {
+        int lastId = DatabaseJobseeker.getLastId();
+        ArrayList<Invoice> list = DatabaseInvoice.getInvoiceByJobseeker(lastId);
+                for(Invoice i : list)
+                i.setTotalFee();
+    }
+
+    {
+
+        }
+
         //Recruiter recruiter1 = new Recruiter(1,"Bryan","bryandariolc@gmail.com","081398558008",location1);
         //Job job1 = new Job(1,"Senior Designer",recruiter1,200000,JobCategory.DataAnalyst);
         
