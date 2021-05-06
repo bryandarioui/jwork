@@ -38,6 +38,7 @@ public class BankPayment extends Invoice {
     @Override
     public String toString()
     {
+
         Date date = getDate().getTime();
         String strDate = "";
         if (date != null) {

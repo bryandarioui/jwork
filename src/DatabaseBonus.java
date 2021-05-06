@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
-public class DatabaseBonus
-{
+public class DatabaseBonus {
+
     private static ArrayList<Bonus> BONUS_DATABASE= new ArrayList<Bonus>();;
     private static int lastId = 0;
 
@@ -13,13 +13,20 @@ public class DatabaseBonus
         return lastId;
     }
 
-    public static Bonus getBonusById(int id){
-        for (int i=0; i < BONUS_DATABASE.size(); i++) {
-            if(BONUS_DATABASE.get(i).getId() == id){
-                return BONUS_DATABASE.get(i);
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
+        Bonus val = null;
+        try {
+            for (Bonus bns : BONUS_DATABASE) {
+                if (id == bns.getId()) {
+                    val = bns;
+                }
             }
         }
-        return null;
+        catch (Exception error)
+        {
+            throw new BonusNotFoundException(id);
+        }
+        return val;
     }
 
     public static Bonus getBonusByReferralCode(String referralCode){
@@ -31,11 +38,13 @@ public class DatabaseBonus
         return null;
     }
 
-    public static boolean addBonus(Bonus bonus){
-        for (Bonus bons : BONUS_DATABASE)
+    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
+        for (Bonus bns : BONUS_DATABASE)
         {
-            if (bons.getId() == bonus.getId()) return false;
-            if (bons.getReferralCode() == bonus.getReferralCode()) return false;
+            if (bonus.getReferralCode() == bns.getReferralCode())
+            {
+                throw new ReferralCodeAlreadyExistsException(bonus);
+            }
         }
         BONUS_DATABASE.add(bonus);
         lastId = bonus.getId();
@@ -62,13 +71,13 @@ public class DatabaseBonus
         return false;
     }
 
-    public static boolean removeBonus(int id){
-        for (int i = 0; i < BONUS_DATABASE.size(); i++) {
-            if (BONUS_DATABASE.get(i).getId() == id) {
-                BONUS_DATABASE.remove(i);
+    public static boolean removeBonus(int id) throws JobNotFoundException {
+        for (Bonus bns : BONUS_DATABASE) {
+            if (bns.getId() == id) {
+                BONUS_DATABASE.remove(bns);
                 return true;
             }
         }
-        return false;
+        throw new JobNotFoundException(id);
     }
 }
