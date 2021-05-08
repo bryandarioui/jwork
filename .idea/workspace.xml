@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1e40815-90c4-4dd8-8212-de652089bbec" name="Default Changelist" comment="Modul 6 - Post Test">
-      <change afterPath="$PROJECT_DIR$/src/BonusNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmailAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FeeCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JobNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JobSeekerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RecruiterNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReferralCodeAlreadyExistsException.java" afterDir="false" />
+    <list default="true" id="a1e40815-90c4-4dd8-8212-de652089bbec" name="Default Changelist" comment="Modul 7 - Case Study">
+      <change afterPath="$PROJECT_DIR$/src/InvoiceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OngoingInvoiceAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistem/Jwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistem/Jwork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Jwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jwork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619231445817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modul 7 - Case Study">
+      <created>1620296762809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620296762809</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Modul 7 - Case Study">
+      <created>1620296854545</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620296854545</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +133,7 @@
     <MESSAGE value="Modul 6 - Pre CS" />
     <MESSAGE value="Modul 6 - Case Study" />
     <MESSAGE value="Modul 6 - Post Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 - Post Test" />
+    <MESSAGE value="Modul 7 - Case Study" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 - Case Study" />
   </component>
 </project>

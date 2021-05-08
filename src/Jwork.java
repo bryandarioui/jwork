@@ -92,13 +92,28 @@ public class Jwork{ /** inisiasi class */
                 Recruiter recruiter = new Recruiter(1, "Bryan Dario", "bryandario@ui.ac.id", "0813231123", location);
                 DatabaseJob.addJob(new Job(1, "Facebook UI Designer", recruiter, 120000, JobCategory.UI));
 
-                DatabaseInvoice.addInvoice(new BankPayment(1, DatabaseJob.getJobDatabase(), js1));
-                DatabaseInvoice.addInvoice(new BankPayment(2, DatabaseJob.getJobDatabase(), js2));
-                DatabaseInvoice.addInvoice(new BankPayment(3, DatabaseJob.getJobDatabase(), js3));
+                ArrayList<Invoice> list = new ArrayList<Invoice>();
+                list.add(new BankPayment(1, DatabaseJob.getJobDatabase(), js1));
+                list.add(new BankPayment(2, DatabaseJob.getJobDatabase(), js2));
+                list.add(new BankPayment(3, DatabaseJob.getJobDatabase(), js3));
 
             } catch (JobSeekerNotFoundException e) {
                 System.out.print(e.getMessage());
                 return;
+            }
+
+            try{
+                Invoice invoice = DatabaseInvoice.getInvoiceById(88);
+            } catch (InvoiceNotFoundException e){
+                System.out.print(e.getMessage());
+            }
+
+            for (Invoice invoice : list) {
+                try{
+                    DatabaseBonus.addBonus(invoice);
+                } catch (OngoingInvoiceAlreadyExistsException e){
+                    System.out.print(e.getMessage());
+                }
             }
 
             Thread myThread = new Thread(new FeeCalculator());
