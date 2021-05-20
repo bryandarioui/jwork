@@ -16,7 +16,7 @@ public class DatabaseRecruiter /** inisiasi class */
         }
 
     public static int getLastId(){
-        return getLastId();
+        return lastId;
     }
 
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {

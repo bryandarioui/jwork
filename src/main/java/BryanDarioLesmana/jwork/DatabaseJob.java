@@ -16,7 +16,7 @@ public class DatabaseJob /** inisiasi class */
     }
 
     public static int getLastId(){
-        return getLastId();
+        return lastId;
     }
 
     public static Job getJobById(int id) throws JobNotFoundException {
