@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Jwork {
 
         public static void main(String[] args) {
-            Location location1 = new Location("Jakarta", "Jakarta Pusat", "LOL");
-            Location location2 = new Location("Bandung", "Bandung", "Mana ada");
-            Location location3 = new Location("Tanggerang", "Serpong", ":O");
+            Location location1 = new Location("Jakarta", "Jakarta Pusat", "testing");
+            Location location2 = new Location("Bandung", "Bandung", "Mana");
+            Location location3 = new Location("Tanggerang", "Serpong", "haihai");
 
             DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Bryan", "bryan@gmail.com", "083123123", location1));
             DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Dario", "bryan2@gmail.com", "08671232131", location2));
