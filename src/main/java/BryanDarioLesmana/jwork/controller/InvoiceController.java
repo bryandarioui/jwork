@@ -55,9 +55,9 @@ public class InvoiceController {
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
                                   @RequestParam(value = "adminId") int adminFee){
         ArrayList<Job> job = new ArrayList<>();
-        for (int jb : jobIdList) {
+        for (int jobs : jobIdList) {
             try {
-                job.add(DatabaseJob.getJobById(jb);
+                job.add(DatabaseJob.getJobById(jobs);
             } catch (JobNotFoundException e) {
                 System.out.println(e.getMessage());
             }
