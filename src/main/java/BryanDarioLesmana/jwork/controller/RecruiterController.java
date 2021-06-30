@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 @RequestMapping("/recruiter")
 @RestController
+//class untuk jobseekercontroller//
 public class RecruiterController {
     @RequestMapping("")
     public ArrayList<Recruiter> getAllRecruiter(){
@@ -17,7 +18,11 @@ public class RecruiterController {
         recruiter = DatabaseRecruiter.getRecruiterDatabase();
         return recruiter;
     }
-
+    /**
+     * method getter Recruiter dengan id
+     * @param id
+     * @return Recruiter dengan id yang sesuai
+     */
     @RequestMapping("/{id}")
     public Recruiter getRecruiterById(@PathVariable int id) {
         Recruiter recruiter = null;
@@ -29,7 +34,16 @@ public class RecruiterController {
         }
         return recruiter;
     }
-
+    /**
+     * method untuk menambah recruiter
+     * @param name
+     * @param email
+     * @param phoneNumber
+     * @param province
+     * @param city
+     * @param description
+     * @return recruiter
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value ="name") String name,
                                   @RequestParam(value ="email") String email,

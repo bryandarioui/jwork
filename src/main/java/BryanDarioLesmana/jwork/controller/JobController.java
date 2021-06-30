@@ -10,8 +10,12 @@ import java.util.ArrayList;
 
 @RequestMapping("/job")
 @RestController
+//class pada job controller//
 public class JobController {
-
+    /**
+     * method getter untuk semua job
+     * @return semua job
+     */
     @RequestMapping("")
     public ArrayList<Job> getAllJob(){
         return DatabaseJob.getJobDatabase();
@@ -27,17 +31,33 @@ public class JobController {
         }
         return js;
     }
-
+    /**
+     * method getter menggunakan recruiter id
+     * @param recruiterId
+     * @return job dengan recruiter id yang sesuai
+     */
     @RequestMapping(value = "/recruiter/{recruiterId}", method = RequestMethod.GET)
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         return DatabaseJob.getJobByRecruiter(recruiterId);
     }
-
+    /**
+     * method getter menggunakan kategori
+     * @param category
+     * @return job dengan kategori yang sesuai
+     */
     @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
     public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category) {
         return DatabaseJob.getJobByCategory(category);
     }
-
+    /**
+     * method penambahan job
+     * @param name nama pekerjaan
+     * @param fee bonus
+     * @param category kategori job
+     * @param recruiterId
+     * @return job yang telah dibuat
+     * @throws RecruiterNotFoundException
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,
                       @RequestParam(value="fee") int fee,

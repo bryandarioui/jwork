@@ -8,9 +8,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+/**
+ * inisiasi class jwork
+ */
 public class Jwork {
 
     public static void main(String[] args) {
+        /**
+         * Membuat objek yang dibutuhkan untuk aplikasi yaitu location, recruiter dan job
+         */
         Location location1 = new Location("Jakarta", "Jakarta Pusat", "testing");
         Location location2 = new Location("Bandung", "Bandung", "haihai");
         Location location3 = new Location("Bogor", "Bogor", "heihei");
