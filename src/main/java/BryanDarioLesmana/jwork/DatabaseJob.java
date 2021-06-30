@@ -2,23 +2,37 @@ package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
 /**
- * 
- * @author(Bryan Dario Lesmana Chikwado)
- * @version(Modul2-25.03.2021)
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
  */
+
 public class DatabaseJob /** inisiasi class */
 {
     private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();;
     private static int lastId = 0;
 
+    /**
+     * method getter database job
+     * @return database job
+     */
     public static ArrayList<Job> getJobDatabase(){
         return JOB_DATABASE;
     }
 
+    /**
+     * method getter id terakhir
+     * @return id terakhir
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    /**
+     * method getter dengan id
+     * @param id
+     * @return val jika nilainya sama dengan job
+     * @throws JobNotFoundException
+     */
     public static Job getJobById(int id) throws JobNotFoundException {
         Job val = null;
         try {
@@ -35,6 +49,11 @@ public class DatabaseJob /** inisiasi class */
         return val;
     }
 
+    /**
+     * method getter job dengan recruiter
+     * @param recruiterId
+     * @return null
+     */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
         ArrayList<Job> a = new ArrayList<>();
         for (int i = 0; i < JOB_DATABASE.size(); i++) {
@@ -46,6 +65,11 @@ public class DatabaseJob /** inisiasi class */
         return null;
     }
 
+    /**
+     * method getter job berdasarkan kategori
+     * @param category
+     * @return null
+     */
     public static ArrayList<Job> getJobByCategory(JobCategory category){
         ArrayList<Job> a = new ArrayList<>();
         for (int i = 0; i < JOB_DATABASE.size(); i++) {
@@ -57,6 +81,11 @@ public class DatabaseJob /** inisiasi class */
         return null;
     }
 
+    /**
+     * method untuk menambahkan job
+     * @param job
+     * @return true jika job berhasil ditambah
+     */
     public static boolean addJob(Job job){
         JOB_DATABASE.add(job);
         lastId = JOB_DATABASE.size()-1;
@@ -64,6 +93,12 @@ public class DatabaseJob /** inisiasi class */
         return true;
     }
 
+    /**
+     * method untuk menghapus job
+     * @param id
+     * @return true jika job berhasil dihapus
+     * @throws JobNotFoundException jika job tidak ditemukan
+     */
     public static boolean removeJob(int id) throws JobNotFoundException{
         for (Job job : JOB_DATABASE)
         {

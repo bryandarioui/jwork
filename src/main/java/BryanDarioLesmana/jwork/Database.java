@@ -1,9 +1,7 @@
 package BryanDarioLesmana.jwork;
 /**
- * Write a description of class Database here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
  */
 public class Database
 {

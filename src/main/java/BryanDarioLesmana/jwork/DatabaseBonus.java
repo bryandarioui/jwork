@@ -1,19 +1,39 @@
+/**
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
+ */
+
 package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
+//class database bonus//
 public class DatabaseBonus {
 
     private static ArrayList<Bonus> BONUS_DATABASE= new ArrayList<Bonus>();;
     private static int lastId = 0;
 
+    /**
+     * method getter database bonus
+     * @return database bonus
+     */
     public static ArrayList<Bonus> getBonusDatabase(){
         return BONUS_DATABASE;
     }
 
+    /**
+     * method getter id terakhir
+     * @return id terakhir
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    /**
+     * method getter bonus sesuai id
+     * @param id
+     * @return bonus dengan id yang sesuai
+     * @throws BonusNotFoundException
+     */
     public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus val = null;
         try {
@@ -30,6 +50,11 @@ public class DatabaseBonus {
         return val;
     }
 
+    /**
+     * method getter bonus sesuai dengan referral code
+     * @param referralCode
+     * @return bonus dengan referral code yang sesuai
+     */
     public static Bonus getBonusByReferralCode(String referralCode){
         for (int i=0; i < BONUS_DATABASE.size(); i++) {
             if(BONUS_DATABASE.get(i).getReferralCode()== referralCode){
@@ -39,6 +64,12 @@ public class DatabaseBonus {
         return null;
     }
 
+    /**
+     * method penambahan bonus
+     * @param bonus
+     * @return true apabila penambahan berhasil
+     * @throws ReferralCodeAlreadyExistsException
+     */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus bns : BONUS_DATABASE)
         {
@@ -52,6 +83,11 @@ public class DatabaseBonus {
         return true;
     }
 
+    /**
+     * method aktivasi bonus
+     * @param id
+     * @return true jika berhasil, false jika tidak
+     */
     public static boolean activateBonus(int id) {
         for (int i = 0; i < BONUS_DATABASE.size(); i++) {
             if (BONUS_DATABASE.get(i).getId() == id) {
@@ -62,6 +98,11 @@ public class DatabaseBonus {
         return false;
     }
 
+    /**
+     * method menonaktifkan bonus
+     * @param id
+     * @return true jika berhasil, false jika tidak
+     */
     public static boolean deactivateBonus(int id) {
         for (int i = 0; i < BONUS_DATABASE.size(); i++) {
             if (BONUS_DATABASE.get(i).getId() == id) {
@@ -72,6 +113,12 @@ public class DatabaseBonus {
         return false;
     }
 
+    /**
+     * method penghilangan bonus
+     * @param id
+     * @return true jika terhapus, false jika tidak
+     * @throws JobNotFoundException
+     */
     public static boolean removeBonus(int id) throws JobNotFoundException {
         for (Bonus bns : BONUS_DATABASE) {
             if (bns.getId() == id) {

@@ -1,33 +1,65 @@
+/**
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
+ */
+
 package BryanDarioLesmana.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+//class bank payment//
 public class BankPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee = 0;
 
+    /**
+     * constructor bank payment
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
     }
 
+    /**
+     * constructor bank payment dengan admin fee
+     * @param id
+     * @param job
+     * @param jobseeker
+     * @param adminFee
+     */
     public BankPayment(int id, ArrayList<Job> job, Jobseeker jobseeker, int adminFee) {
         super(id, job, jobseeker);
         this.adminFee = adminFee;
     }
 
+    /**
+     * method getter payment type
+     * @return payment type
+     */
     public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
 
+    /**
+     * method getter admin fee
+     * @return admin fee
+     */
     public int getAdminFee() {
         return adminFee;
     }
 
+    /**
+     * method setter admin fee
+     * @param adminFee
+     */
     public void setAdminFee(int adminFee) {
         this.adminFee = adminFee;
     }
+
     /** memperbarui total fee berdasarkan bonus */
     public void setTotalFee() {
         //totalFee = getJob().getFee();
@@ -37,6 +69,10 @@ public class BankPayment extends Invoice {
     }
 
     @Override
+    /**
+     * method string untuk menampilkan hasil
+     * @return string
+     */
     public String toString()
     {
 

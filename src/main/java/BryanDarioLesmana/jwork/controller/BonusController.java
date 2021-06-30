@@ -1,5 +1,8 @@
 package BryanDarioLesmana.jwork.controller;
-
+/**
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
+ */
 import BryanDarioLesmana.jwork.*;
 import org.springframework.web.bind.annotation.*;
 

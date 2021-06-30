@@ -16,8 +16,8 @@ public class JobseekerController {
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
         try {
-            jobseeker = DatabaseJobseeker.getJobseekerById(id);
-        } catch (JobSeekerNotFoundException e) {
+            jobseeker = DatabaseJobseekerPostgre.getJobseekerById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -29,10 +29,10 @@ public class JobseekerController {
                                        @RequestParam(value="email") String email,
                                         @RequestParam(value="password") String password)
     {
-        Jobseeker jobseeker = new Jobseeker(DatabaseJobseeker.getLastId()+1, name, email, password);
+        Jobseeker jobseeker = new Jobseeker(DatabaseJobseekerPostgre.getLastId()+1, name, email, password);
         try {
-            DatabaseJobseeker.addJobseeker(jobseeker);
-        } catch (EmailAlreadyExistsException e) {
+            DatabaseJobseekerPostgre.addJobseeker(jobseeker);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -43,7 +43,7 @@ public class JobseekerController {
     public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
                                     @RequestParam(value="password") String password)
     {
-        Jobseeker jobseeker = DatabaseJobseeker.jobseekerLogin(email,password);
+        Jobseeker jobseeker = DatabaseJobseekerPostgre.getJobseekerLogin(email,password);
         return jobseeker;
     }
 }

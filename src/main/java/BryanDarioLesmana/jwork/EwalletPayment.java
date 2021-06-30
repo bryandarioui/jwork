@@ -1,29 +1,63 @@
+/**
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
+ */
+
 package BryanDarioLesmana.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
+//class ewallet payment//
 public class EwalletPayment extends Invoice
 {
+
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
-    
+
+    /**
+     * constructor ewallet payment
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
-    super(id, jobs, jobseeker);
+        super(id, jobs, jobseeker);
     }
-    
+
+    /**
+     * constructor ewalletpayment dengan bonus
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     * @param bonus
+     */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
-    super(id, jobs, jobseeker);
-    this.bonus = bonus;
+        super(id, jobs, jobseeker);
+        this.bonus = bonus;
     }
-    
+
+    /**
+     * method getter payment type
+     * @return payment type
+     */
     public PaymentType getPaymentType(){
-        return PAYMENT_TYPE; 
+        return PAYMENT_TYPE;
     }
+
+    /**
+     * method getter bonus
+     * @return bonus
+     */
     public Bonus getBonus(){
         return bonus;
     }
+
+    /**
+     * method setter bonus
+     * @param bonus
+     */
     public void setBonus(Bonus bonus){
         this.bonus = bonus;
     }
@@ -34,7 +68,11 @@ public class EwalletPayment extends Invoice
             super.totalFee += bonus.getExtraFee();
         }
     }
-    
+
+    /**
+     * method setter total fee untuk menghitung upah
+     * @return
+     */
     @Override
     public String toString() {
         Date date = getDate().getTime();

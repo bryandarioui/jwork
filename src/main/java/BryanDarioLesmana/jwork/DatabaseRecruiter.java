@@ -2,23 +2,37 @@ package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
 /**
- * 
- * @author(Bryan Dario Lesmana Chikwado)
- * @version(Modul2-25.03.2021)
+ * @author Bryan Dario Lesmana(18016199940)
+ * @version 28/06/21
  */
+
 public class DatabaseRecruiter /** inisiasi class */
 {
     private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();;
     private static int lastId = 0;
 
+    /**
+     * method getter proyek database recruiter
+     * @return database recruiter
+     */
     public static ArrayList<Recruiter> getRecruiterDatabase(){
-            return RECRUITER_DATABASE;
-        }
+        return RECRUITER_DATABASE;
+    }
 
+    /**
+     * method getter id terakhir database recruiter
+     * @return id terakhir database recruiter
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    /**
+     * method getter recruiter dengan id
+     * @param id recruiter
+     * @return id recruiter
+     * @throws RecruiterNotFoundException
+     */
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {
         Recruiter val = null;
         try {
@@ -36,7 +50,7 @@ public class DatabaseRecruiter /** inisiasi class */
 
     public static boolean addRecruiter(Recruiter recruiter){
         RECRUITER_DATABASE.add(recruiter);
-        lastId = RECRUITER_DATABASE.size()-1;
+        lastId += 1;
         return true;
     }
 
