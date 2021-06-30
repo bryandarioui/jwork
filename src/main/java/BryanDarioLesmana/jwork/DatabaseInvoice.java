@@ -8,7 +8,7 @@ import jdk.jfr.StackTrace;
 
 import java.util.ArrayList;
 
-//class database invoice//
+ /** inisiasi class */
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
     private static int lastId;
@@ -31,7 +31,7 @@ public class DatabaseInvoice {
 
     /**
      * method getter invoice dengan id
-     * @param id
+     * @param id id dari invoice
      * @return invoice dengan id yang sesuai
      * @throws InvoiceNotFoundException
      */
@@ -52,7 +52,7 @@ public class DatabaseInvoice {
 
     /**
      * method getter invoice dengan jobseeker
-     * @param jobseekerId
+     * @param jobseekerId id dari jobseeker
      * @return invoice dengan jobseeker yang sesuai
      */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
@@ -67,7 +67,7 @@ public class DatabaseInvoice {
 
     /**
      * method penambahan invoice
-     * @param invoice
+     * @param invoice invoice
      * @return true jika invoice berhasil ditambah
      * @throws OngoingInvoiceAlreadyExistsException
      */
@@ -84,8 +84,8 @@ public class DatabaseInvoice {
 
     /**
      * method pengubahan status invoice
-     * @param id
-     * @param invoiceStatus
+     * @param id id invoice
+     * @param invoiceStatus status invoice
      * @return true jika status invoice berhasil diubah
      */
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
@@ -100,7 +100,7 @@ public class DatabaseInvoice {
 
     /**
      * method untuk menghapus invoice
-     * @param id
+     * @param id id invoice
      * @return true jika invoice berhasil terhapus
      * @throws InvoiceNotFoundException jika tidak terdapat invoice
      */

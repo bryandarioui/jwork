@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @RequestMapping("/job")
 @RestController
-//class pada job controller//
+/** inisiasi class */
 public class JobController {
     /**
      * method getter untuk semua job
@@ -33,7 +33,7 @@ public class JobController {
     }
     /**
      * method getter menggunakan recruiter id
-     * @param recruiterId
+     * @param recruiterId recruiterId
      * @return job dengan recruiter id yang sesuai
      */
     @RequestMapping(value = "/recruiter/{recruiterId}", method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class JobController {
     }
     /**
      * method getter menggunakan kategori
-     * @param category
+     * @param category category
      * @return job dengan kategori yang sesuai
      */
     @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
@@ -54,9 +54,8 @@ public class JobController {
      * @param name nama pekerjaan
      * @param fee bonus
      * @param category kategori job
-     * @param recruiterId
+     * @param recruiterId recruiterId
      * @return job yang telah dibuat
-     * @throws RecruiterNotFoundException
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,

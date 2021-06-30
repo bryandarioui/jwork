@@ -5,14 +5,16 @@
 
 package BryanDarioLesmana.jwork;
 
-//class invoice not found exception//
+/** inisiasi class */
 public class InvoiceNotFoundException extends Exception{
-
+    /**
+     * variabel invoice error
+     */
     private int invoice_error;
 
     /**
      * constructor yang digunakan
-     * @param invoice_input
+     * @param invoice_input invoice_input
      */
     public InvoiceNotFoundException(int invoice_input){
         super("Invoice ID: ");

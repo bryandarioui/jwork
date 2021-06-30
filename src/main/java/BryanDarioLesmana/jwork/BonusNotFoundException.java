@@ -5,13 +5,18 @@
 
 package BryanDarioLesmana.jwork;
 
-//clas bonus not found exception//
+/**
+ * inisiasi class
+ */
 public class BonusNotFoundException extends Exception {
+    /**
+     * variabel bonus error
+     */
     private int bonus_error;
 
     /**
      * constructor bonus not found exception
-     * @param bonus_input
+     * @param bonus_input bonus_input
      */
     public BonusNotFoundException(int bonus_input){
         super("Bonus ID: ");

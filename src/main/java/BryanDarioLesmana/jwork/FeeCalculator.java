@@ -6,7 +6,7 @@
 package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
-//class untuk menghitung total fee//
+/** inisiasi class */
 public class FeeCalculator implements Runnable{
 
     /**

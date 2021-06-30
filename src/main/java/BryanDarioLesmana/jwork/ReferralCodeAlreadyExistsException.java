@@ -9,11 +9,14 @@ package BryanDarioLesmana.jwork;
  * inisiasi class
  */
 public class ReferralCodeAlreadyExistsException extends Exception {
+    /**
+     * variabel referral error
+     */
     private Bonus referral_error;
 
     /**
      * constructor untuk referral code already exist
-     * @param referral_input
+     * @param referral_input referral_input
      */
     public ReferralCodeAlreadyExistsException(Bonus referral_input){
         super("Jobseeker Email : ") ;

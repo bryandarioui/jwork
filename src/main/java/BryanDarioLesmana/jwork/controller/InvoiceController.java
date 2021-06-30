@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @RequestMapping("/invoice")
 @RestController
 
-//class InvoiceController//
+/** inisiasi class */
 public class InvoiceController {
     /**
      * method getter untuk semua invoice
@@ -38,7 +38,7 @@ public class InvoiceController {
     }
     /**
      * method getter invoice dengan jobseeker
-     * @param jobseekerId
+     * @param jobseekerId jobseekerId
      * @return invoice pada jobseeker id yang sesuai
      */
     @RequestMapping(value = "/jobseeker/{jobseekerId}", method = RequestMethod.GET)
@@ -50,7 +50,6 @@ public class InvoiceController {
      * @param id invoice
      * @param invoiceStatus yang mengeluarkan hasil cancelled atau finished
      * @return nilai invoice terbaru
-     * @throws InvoiceNotFoundException
      */
     @RequestMapping(value = "/invoiceStatus", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
@@ -61,7 +60,7 @@ public class InvoiceController {
     }
     /**
      * method menghapus invoice dengan menggunakan id
-     * @param id
+     * @param id id
      * @return hasilnya true jika telah terhapus
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

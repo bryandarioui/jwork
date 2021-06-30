@@ -6,7 +6,7 @@
 package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
-//class database bonus//
+/** inisiasi class */
 public class DatabaseBonus {
 
     private static ArrayList<Bonus> BONUS_DATABASE= new ArrayList<Bonus>();;
@@ -30,7 +30,7 @@ public class DatabaseBonus {
 
     /**
      * method getter bonus sesuai id
-     * @param id
+     * @param id bonus
      * @return bonus dengan id yang sesuai
      * @throws BonusNotFoundException
      */
@@ -52,7 +52,7 @@ public class DatabaseBonus {
 
     /**
      * method getter bonus sesuai dengan referral code
-     * @param referralCode
+     * @param referralCode referral code
      * @return bonus dengan referral code yang sesuai
      */
     public static Bonus getBonusByReferralCode(String referralCode){
@@ -66,7 +66,7 @@ public class DatabaseBonus {
 
     /**
      * method penambahan bonus
-     * @param bonus
+     * @param bonus bonus
      * @return true apabila penambahan berhasil
      * @throws ReferralCodeAlreadyExistsException
      */
@@ -85,7 +85,7 @@ public class DatabaseBonus {
 
     /**
      * method aktivasi bonus
-     * @param id
+     * @param id id bonus
      * @return true jika berhasil, false jika tidak
      */
     public static boolean activateBonus(int id) {
@@ -100,7 +100,7 @@ public class DatabaseBonus {
 
     /**
      * method menonaktifkan bonus
-     * @param id
+     * @param id id bonus
      * @return true jika berhasil, false jika tidak
      */
     public static boolean deactivateBonus(int id) {
@@ -115,7 +115,7 @@ public class DatabaseBonus {
 
     /**
      * method penghilangan bonus
-     * @param id
+     * @param id id bonus
      * @return true jika terhapus, false jika tidak
      * @throws JobNotFoundException
      */

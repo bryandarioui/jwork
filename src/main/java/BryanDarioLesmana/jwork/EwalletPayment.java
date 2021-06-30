@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
-//class ewallet payment//
+/**
+ * inisiasi class
+ */
 public class EwalletPayment extends Invoice
 {
 
@@ -18,9 +20,9 @@ public class EwalletPayment extends Invoice
 
     /**
      * constructor ewallet payment
-     * @param id
-     * @param jobs
-     * @param jobseeker
+     * @param id id
+     * @param jobs jobs
+     * @param jobseeker jobseeker
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         super(id, jobs, jobseeker);
@@ -28,10 +30,10 @@ public class EwalletPayment extends Invoice
 
     /**
      * constructor ewalletpayment dengan bonus
-     * @param id
-     * @param jobs
-     * @param jobseeker
-     * @param bonus
+     * @param id id
+     * @param jobs jobs
+     * @param jobseeker jobseeker
+     * @param bonus bonus
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
         super(id, jobs, jobseeker);
@@ -56,7 +58,7 @@ public class EwalletPayment extends Invoice
 
     /**
      * method setter bonus
-     * @param bonus
+     * @param bonus bonus
      */
     public void setBonus(Bonus bonus){
         this.bonus = bonus;
@@ -71,7 +73,7 @@ public class EwalletPayment extends Invoice
 
     /**
      * method setter total fee untuk menghitung upah
-     * @return
+     * @return str
      */
     @Override
     public String toString() {

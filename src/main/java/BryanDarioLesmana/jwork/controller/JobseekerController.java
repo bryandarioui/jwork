@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/jobseeker")
 @RestController
-//class untuk jobseekercontroller//
+/** inisiasi class */
 public class JobseekerController {
 
     @RequestMapping("")
@@ -14,7 +14,7 @@ public class JobseekerController {
     }
     /**
      * method getter jobseeker dengan id
-     * @param id
+     * @param id id jobseeker
      * @return jobseeker dengan id yang sesuai
      */
     @RequestMapping("/{id}")
@@ -30,9 +30,9 @@ public class JobseekerController {
     }
     /**
      * method untuk melakukan regist
-     * @param name
-     * @param email
-     * @param password
+     * @param name nama
+     * @param email email
+     * @param password passowrd
      * @return jobseeker yang telah regist
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -51,8 +51,8 @@ public class JobseekerController {
     }
     /**
      * method untuk melakukan login
-     * @param email
-     * @param password
+     * @param email email
+     * @param password password
      * @return jobseeker yang telah login
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)

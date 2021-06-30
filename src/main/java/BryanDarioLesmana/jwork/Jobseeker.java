@@ -8,8 +8,8 @@ import java.util.regex.*;
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-
-public class Jobseeker /** inisiasi class */
+/** inisiasi class */
+public class Jobseeker
 {
     private int id; /** inisiasi variabel */
 private String name;

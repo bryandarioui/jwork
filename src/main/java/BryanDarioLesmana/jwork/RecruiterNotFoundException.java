@@ -4,13 +4,18 @@
  */
 package BryanDarioLesmana.jwork;
 
-//inisasi class
+/**
+ * inisiasi class
+ */
 public class RecruiterNotFoundException extends Exception {
+    /**
+     * variabel recruiter error
+     */
     private int recruiter_error;
 
     /**
      * constructor recruiter not found exception
-     * @param recruiter_input
+     * @param recruiter_input recruiter_input
      */
     public RecruiterNotFoundException(int recruiter_input){
         super("Recruiter ID: ");

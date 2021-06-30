@@ -15,14 +15,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-//class database jobseeker postgre//
+/**
+ * inisiasi class
+ */
 public class DatabaseJobseekerPostgre {
     private static Connection c = null;
     private static Statement stmt = null;
 
     /**
      * method penambahan jobseeker
-     * @param jobseeker
+     * @param jobseeker jobseeker
      * @return jobseeker
      */
     public static Jobseeker addJobseeker(Jobseeker jobseeker) {
@@ -79,7 +81,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method getter jobseeker dengan id
-     * @param id
+     * @param id id
      * @return value jobseeker
      */
     public static Jobseeker getJobseekerById(int id) {
@@ -109,7 +111,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method penghapusan jobseeker
-     * @param id
+     * @param id id
      * @return true jika jobseeker berhasil dihapus
      */
     public static boolean removeJobseeker(int id) {
@@ -129,8 +131,8 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method login jobseeker
-     * @param emailInput
-     * @param passwordInput
+     * @param emailInput emailInput
+     * @param passwordInput passwordInput
      * @return jobseeker yang berhasil login
      */
     public static Jobseeker getJobseekerLogin(String emailInput, String passwordInput) {

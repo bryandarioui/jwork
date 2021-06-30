@@ -12,7 +12,7 @@ public class JobNotFoundException extends Exception {
 
     /**
      * constructor yang digunakan
-     * @param
+     * @param job_input input job
      */
     public JobNotFoundException(int job_input){
         super("Job ID: ");

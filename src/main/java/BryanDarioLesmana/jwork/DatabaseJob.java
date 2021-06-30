@@ -6,7 +6,10 @@ import java.util.ArrayList;
  * @version 28/06/21
  */
 
-public class DatabaseJob /** inisiasi class */
+/**
+ * inisiasi class
+ * */
+public class DatabaseJob
 {
     private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();;
     private static int lastId = 0;
@@ -29,9 +32,8 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter dengan id
-     * @param id
+     * @param id id
      * @return val jika nilainya sama dengan job
-     * @throws JobNotFoundException
      */
     public static Job getJobById(int id) throws JobNotFoundException {
         Job val = null;
@@ -51,7 +53,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter job dengan recruiter
-     * @param recruiterId
+     * @param recruiterId recruiterId
      * @return null
      */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
@@ -67,7 +69,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter job berdasarkan kategori
-     * @param category
+     * @param category category
      * @return null
      */
     public static ArrayList<Job> getJobByCategory(JobCategory category){
@@ -83,7 +85,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method untuk menambahkan job
-     * @param job
+     * @param job job
      * @return true jika job berhasil ditambah
      */
     public static boolean addJob(Job job){
@@ -95,7 +97,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method untuk menghapus job
-     * @param id
+     * @param id id
      * @return true jika job berhasil dihapus
      * @throws JobNotFoundException jika job tidak ditemukan
      */

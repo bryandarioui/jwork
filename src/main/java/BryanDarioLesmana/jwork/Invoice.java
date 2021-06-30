@@ -8,10 +8,12 @@ import java.time.LocalDate;
  * @author Bryan Dario Lesmana(18016199940)
  * @version 28/06/21
  */
+
+/** inisiasi class */
 public abstract class Invoice /** inisiasi class */
 {
     private int id; /** inisiasi variabel */
-private ArrayList<Job> jobs;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
@@ -21,10 +23,8 @@ private ArrayList<Job> jobs;
     /**
      * constructor
      * @param id id pada invoice
-     * @param
-     * @param
-     * @param
-     * @param jobseeker objek jobseeker
+     * @param jobs job pada invoice
+     * @param jobseeker jobseeker pada invoice
      */
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         this.id = id;
@@ -71,6 +71,10 @@ private ArrayList<Job> jobs;
     public Jobseeker getJobseeker(){
         return this.jobseeker;
     }
+    /**
+     * getter objek payment type dari invoice
+     * @return objek payment type dari invoice
+     */
     public abstract PaymentType getPaymentType();
 
     public InvoiceStatus getInvoiceStatus(){
@@ -85,16 +89,13 @@ private ArrayList<Job> jobs;
     }
     /**
      * setter id job dari invoice
-     * @param
+     * @param jobs dari invoice
      */
 
     public void setJobs(ArrayList<Job> jobs){
         this.jobs = jobs;
     }
-    /**
-     * setter tanggal dari invoice
-     * @param
-     */
+
     public void setDate(Calendar Date){
         this.date = date;
     }
@@ -103,17 +104,19 @@ private ArrayList<Job> jobs;
     }
     /**
      * setter jumlah gaji dari invoice
-     * @param
      */
     public abstract void setTotalFee();
     /**
      * setter objek jobseeker dari invoice
-     * @param
+     * @param jobseeker jobseeker
      */
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
     }
-
+    /**
+     * setter objek jobseeker dari invoice
+     * @param paymentType paymenttype
+     */
     public void setPaymentType(PaymentType paymentType){
         this.paymentType = paymentType;
     }

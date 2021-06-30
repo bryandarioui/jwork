@@ -6,7 +6,7 @@
 package BryanDarioLesmana.jwork;
 import java.util.ArrayList;
 
-//class database jobseeker//
+/** inisiasi class */
 public class DatabaseJobseeker {
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
     ;
@@ -30,9 +30,8 @@ public class DatabaseJobseeker {
 
     /**
      * method getter jobseeker sesuai dengan id
-     * @param id
+     * @param id id jobseeker
      * @return jobseeker yang dicari
-     * @throws JobSeekerNotFoundException
      */
     public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
         Jobseeker val = null;
@@ -45,9 +44,8 @@ public class DatabaseJobseeker {
 
     /**
      * method penambahan jobseeker
-     * @param jobseeker
+     * @param jobseeker jobseeker
      * @return true jika berhasil ditambah
-     * @throws EmailAlreadyExistsException
      */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
         for(Jobseeker jobseekers : JOBSEEKER_DATABASE)
@@ -62,9 +60,8 @@ public class DatabaseJobseeker {
 
     /**
      * method penghapusan jobseeker
-     * @param id
+     * @param id id
      * @return true jika jobseeker berhasil dihapus
-     * @throws JobSeekerNotFoundException
      */
     public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException{
         for (Jobseeker js : JOBSEEKER_DATABASE) {
@@ -78,8 +75,8 @@ public class DatabaseJobseeker {
 
     /**
      * method untuk login jobseeker
-     * @param email
-     * @param password
+     * @param email email jobseeker
+     * @param password password jobseeker
      * @return jobseeker yang berhasil login
      */
     public static Jobseeker jobseekerLogin(String email, String password) {

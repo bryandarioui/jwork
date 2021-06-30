@@ -5,7 +5,7 @@
 
 package BryanDarioLesmana.jwork;
 
-//enum pada status invoice//
+/** inisiasi class */
 public enum InvoiceStatus
 {
     Ongoing("Ongoing"),

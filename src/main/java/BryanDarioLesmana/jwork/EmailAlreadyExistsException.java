@@ -4,7 +4,13 @@
  */
 package BryanDarioLesmana.jwork;
 
+/**
+ * inisiasi class
+ */
 public class EmailAlreadyExistsException extends Exception {
+    /**
+     * variabel jobseeker error
+     */
     private Jobseeker jobseeker_error;
 
     public EmailAlreadyExistsException(Jobseeker jobseeker_input){

@@ -10,9 +10,12 @@ import java.util.ArrayList;
 
 @RequestMapping("/bonus")
 @RestController
-//class untuk Bonus//
+/** inisiasi class */
 public class BonusController {
     @RequestMapping("")
+    /**
+     * getter all bonus
+     */
     public ArrayList<Bonus> getAllBonus(){
         ArrayList<Bonus> bonus = null;
         bonus = DatabaseBonus.getBonusDatabase();
@@ -20,8 +23,8 @@ public class BonusController {
     }
     /**
      * getter dengan referral code
-     * @param referralCode
-     * @return
+     * @param referralCode referralCode
+     * @return bonus
      */
     @RequestMapping(value = "/{referralCode}", method = RequestMethod.GET)
     public Bonus getBonusByReferralCode(@PathVariable String referralCode) {
@@ -31,12 +34,11 @@ public class BonusController {
     }
     /**
      * method untuk menambah bonus kode
-     * @param referralCode
+     * @param referralCode sebagai referral code
      * @param extraFee untuk ekstra gaji
      * @param minTotalFee untuk gaji minimal
      * @param active untuk status bonus code
      * @return bonus yang telah dibuat
-     * @throws ReferralCodeAlreadyExistsException
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(@RequestParam(value="referralCode") String referralCode,

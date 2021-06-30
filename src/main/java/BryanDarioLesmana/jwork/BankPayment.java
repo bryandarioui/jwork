@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-//class bank payment//
+/** inisiasi class */
 public class BankPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee = 0;
 
     /**
      * constructor bank payment
-     * @param id
-     * @param jobs
-     * @param jobseeker
+     * @param id id
+     * @param jobs jobs
+     * @param jobseeker jobseeker
      */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
@@ -26,10 +26,10 @@ public class BankPayment extends Invoice {
 
     /**
      * constructor bank payment dengan admin fee
-     * @param id
-     * @param job
-     * @param jobseeker
-     * @param adminFee
+     * @param id id
+     * @param job job
+     * @param jobseeker jobseeker
+     * @param adminFee admin fee
      */
     public BankPayment(int id, ArrayList<Job> job, Jobseeker jobseeker, int adminFee) {
         super(id, job, jobseeker);
@@ -54,7 +54,7 @@ public class BankPayment extends Invoice {
 
     /**
      * method setter admin fee
-     * @param adminFee
+     * @param adminFee admin fee
      */
     public void setAdminFee(int adminFee) {
         this.adminFee = adminFee;
